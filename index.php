@@ -66,7 +66,6 @@ $database = new Firebase();
                   <a href="edit-contact.php?id=<?=$key?>" class="btn btn-primary btn-sm">Edit</a>
                   </td>
                   <td>
-                    <!-- <a href="./client/delete-contact.php" class="btn btn-danger btn-sm">Delete</a> -->
                     <form action="delete.php" method="POST">
                       <button type="submit" name="delete_btn" value="<?=$key?>" class="btn btn-danger btn-sm">Delete</button>
                     </form>
