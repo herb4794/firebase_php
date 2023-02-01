@@ -13,7 +13,7 @@ include_once './includes/header.php';
          </h4> 
         </div>
         <div class="card-body">
-          <form action="./server/insert.php" method="POST">
+          <form action="insert.php" method="POST">
             <div class="form-group mb-3">
               <label for="">First Name</label>
               <input type="text" name="first_name" class="form-control">

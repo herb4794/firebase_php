@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../dbcon.php');
+require_once('dbcon.php');
 
 if (isset($_POST['save-contact'])) {
   $first_name = $_POST['first_name'];

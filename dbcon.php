@@ -9,6 +9,7 @@ use Kreait\Firebase\Factory;
     protected $factory;
     protected $database;
 
+
     public function __construct() {
       $this->factory = (new Factory)
            ->withServiceAccount(self::SERVICEACCOUNT)
@@ -30,9 +31,14 @@ use Kreait\Firebase\Factory;
   }
 
     }
+    
+    public function countData($ref_table = null){
+      $count_result = $this->database->getReference($ref_table);
+      return $count_result;
+  } 
 
-    public function getData($ref_table = null, $value = null){
-      $getReference = $this->database->getReference($ref_table)->getValue($value);
+    public function getData($ref_table = null){
+      $getReference = $this->database->getReference($ref_table)->getValue();
       return $getReference;
     }
 
@@ -40,10 +46,16 @@ use Kreait\Firebase\Factory;
       $setReference = $this->database->getReference($ref_table)->getChild($value)->getValue();
       return $setReference;
   } 
-    public function update($ref_table = null,$id = null, $postData = null){
-    $result = $this->database->getReference($ref_table)->update($postData)->getKey($id);
+    public function update($ref_table = null, $postData = null){
+    $result = $this->database->getReference($ref_table)->update($postData);
     return $result; 
-    }
   }
+    public function delete(string $ref_table = null ) {
+      $result = $this->database->getReference($ref_table)->remove();
+      return $result;
+    }
+
+
+}
 
 ?>

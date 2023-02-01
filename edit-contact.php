@@ -24,7 +24,7 @@ $database = new Firebase();
               if($getData > 0){
                 ?>
                 
-        <form action="server/update.php" method="POST">
+        <form action="update.php" method="POST">
 
           <input type="hidden" name="id" value="<?=$key_child?>"></input>
             <div class="form-group mb-3">
@@ -48,7 +48,7 @@ $database = new Firebase();
             </div>
             
             <div class="form-group mb-3">
-              <button type="submit" name="update-contact" class="btn btn-primary">Update Contact</button>
+              <button type="submit" name="update_contact" class="btn btn-primary">Update Contact</button>
               </div>
           </form>
          <?php
