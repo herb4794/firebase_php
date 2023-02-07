@@ -15,34 +15,23 @@ include_once './includes/header.php';
       <div class="card">
         <div class="card-header">
          <h4>
-            Register
+            Login
             <a href="index.php" class="btn btn-danger float-end">BACK</a>
          </h4> 
         </div>
         <div class="card-body">
-          <form action="authentication.php" method="POST">
-            <div class="form-group mb-3">
-              <label for="">User Name</label>
-              <input type="text" name="register_user" class="form-control">
-            </div>
-
-            <div class="form-group mb-3">
-              <label for="">Password</label>
-              <input type="password" name="register_pass" class="form-control">
-            </div>
-
+          <form action="verification.php" method="POST">
             <div class="form-group mb-3">
               <label for="">Email</label>
-              <input type="email" name="register_email" class="form-control">
-            </div>
-
-            <div class="form-group mb-3">
-              <label for="">Phone Number</label>
-              <input type="text" name="register_phone" class="form-control">
+              <input type="email" name="login_email" class="form-control">
             </div>
             
             <div class="form-group mb-3">
-              <button type="submit" name="register_btn" class="btn btn-primary">Register</button>
+              <label for="">Password</label>
+              <input type="password" name="login_pass" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+              <button type="submit" name="login_btn" class="btn btn-primary">Login</button>
             </div>
           </form>
         </div>
