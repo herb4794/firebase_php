@@ -7,6 +7,18 @@ $database = new Firebase();
 ?>
   <div class="container">
    <div class="row">
+  <div class="col-md-6 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h4>Total No of Record:
+          <?php 
+            $count = $database->countData("contact")->getSnapshot()->numChildren();
+            echo $count;
+          ?>
+        </h4> 
+     </div> 
+    </div> 
+  </div>
     <div class="col-md-12">
      <?php
         if (isset($_SESSION['status'])) {
@@ -53,7 +65,9 @@ $database = new Firebase();
                   <a href="edit-contact.php?id=<?=$key?>" class="btn btn-primary btn-sm">Edit</a>
                   </td>
                   <td>
-                    <a href="./client/delete-contact.php" class="btn btn-danger btn-sm">Delete</a>
+                    <form action="delete.php" method="POST">
+                      <button type="submit" name="delete_btn" value="<?=$key?>" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
                   </td>
                   </tr>
                 <?php 

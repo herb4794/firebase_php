@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../dbcon.php';
+require_once 'dbcon.php';
 
 $database = new Firebase();
 
@@ -18,14 +18,14 @@ if(isset($_POST['update_contact'])){
     'phone' => $phone
   ];
 
-  $result = $database->update("contact", $postData, $id);
+  $result = $database->update("contact/".$id, $postData );
 
   if ($result) {
     $_SESSION['status'] = "Contact Update Successuflly";
-    header('Location: ../index.php');
+    header('Location: index.php');
   }else{
     $_SESSION['status'] = "Contact Not Updata";
-    header('Location: ../index.php');
+    header('Location: index.php');
   }
 }
 
