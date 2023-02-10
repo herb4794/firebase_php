@@ -25,6 +25,11 @@ $database = new Firebase();
           echo "<h5 class='alert alert-success'>" . $_SESSION['status'] . "</h5>";
           unset($_SESSION['status']);
         }
+
+        if(isset($_session['expiry_status'])){
+          echo "<h5 class='alert alert-success'>" . $_session['expiry_status']. "</h5>";
+          unset($_session['expiry_status']);
+        }
       ?>
       <div class="card">
         <div class="card-header">
